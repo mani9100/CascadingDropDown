@@ -1,0 +1,32 @@
+<div class="container">
+  <form [formGroup]="CascadingForm">
+    <div>
+      <mat-form-field >
+        <mat-select placeholder="SelectCountry" formControlName="country" (selectionChange)="onSelectCountry()">
+          <mat-option *ngFor="let country of countrylist" [value]="country.id">{{country.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <mat-select placeholder="SelectState" formControlName="state" (selectionChange)="onSelectState()">
+          <mat-option *ngFor="let state of states" [value]="state.stateId">{{state.stateName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <mat-select placeholder="SelectCity" formControlName="city" (selectionChange)="onSelectCity()">
+          <mat-option *ngFor="let city of cities" [value]="city.cityId">{{city.cityName}}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <mat-select placeholder="SelectVillage" formControlName="village">
+          <mat-option *ngFor="let village of villages" [value]="village.VillageId">{{village.VillageName}}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
